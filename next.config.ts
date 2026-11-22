@@ -15,6 +15,15 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.centralacademysaraiinayatprayagraj.com",
+        pathname: "/admin/uploads/**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

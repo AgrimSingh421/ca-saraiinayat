@@ -1,69 +1,220 @@
 import Image from "next/image";
+import Link from "next/link";
+import Navbar from "../components/Navbar";
+import CampusFacilities from "@/components/CampusFacilities";
+import StudentLife from "@/components/StudentLife";
+import LeadershipMessages from "@/components/LeadershipMessages";
+import Announcements from "@/components/Announcements";
+import HomeGallery from "@/components/HomeGallery";
+import Admissions from "@/components/Admissions";
+import ContactSection from "@/components/ContactSection";
+
+const quickLinks = [
+  {
+    number: "01",
+    title: "Admissions",
+    text: "Everything you need to know about joining our school.",
+    href: "/admissions",
+    icon: "↗",
+  },
+  {
+    number: "02",
+    title: "Academics",
+    text: "Explore our approach to learning and education.",
+    href: "/academics",
+    icon: "⌁",
+  },
+  {
+    number: "03",
+    title: "Campus life",
+    text: "Discover the experiences beyond the classroom.",
+    href: "/campus",
+    icon: "✳",
+  },
+  {
+    number: "04",
+    title: "Notice board",
+    text: "Stay up to date with school news and announcements.",
+    href: "/notices",
+    icon: "▤",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <>
+      <main>
+        <section className="hero-section">
+          <div className="hero-orb hero-orb-one" />
+          <div className="hero-orb hero-orb-two" />
+          <div className="container hero-layout">
+            <div className="hero-copy">
+              <div className="eyebrow">
+                <span /> A legacy of learning
+              </div>
+              <div className="identity-card">
+                <Image
+                  src="/images/central-academy-brand.png"
+                  alt="Central Academy, Sarai Inayat, Prayagraj. The legacy continues."
+                  width={521}
+                  height={157}
+                  priority
+                  className="identity-image"
+                />
+              </div>
+              <h1>
+                Building bright futures, <em>one student at a time.</em>
+              </h1>
+              <p className="hero-description">
+                A place where learning goes beyond textbooks, curiosity is
+                encouraged, and every student is inspired to discover their
+                potential.
+              </p>
+              <div className="hero-actions">
+                <Link className="button button-primary" href="/about">
+                  Discover our school <span>↗</span>
+                </Link>
+                <Link className="button button-secondary" href="/admissions">
+                  Explore admissions
+                </Link>
+              </div>
+              <div className="hero-note">
+                <span className="note-line" /> Central Academy, Sarai Inayat ·
+                Prayagraj
+              </div>
+            </div>
+
+            <div
+              className="hero-visual"
+              aria-label="A welcoming introduction to Central Academy"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+              <div className="visual-topline">
+                <span>LEARN</span>
+                <span>GROW</span>
+                <span>LEAD</span>
+              </div>
+              <div className="visual-panel">
+                <div className="visual-panel-inner">
+                  <div className="sun-disc" />
+                  <div className="visual-arch arch-back" />
+                  <div className="visual-arch arch-front">
+                    <div className="arch-window window-one" />
+                    <div className="arch-window window-two" />
+                    <div className="arch-door" />
+                  </div>
+                  <div className="visual-ground" />
+                  <div className="visual-caption">
+                    <span>01 / 03</span>
+                    <strong>
+                      A journey that
+                      <br />
+                      shapes tomorrow.
+                    </strong>
+                  </div>
+                </div>
+              </div>
+              <div className="visual-side-label">
+                EDUCATION · CHARACTER · COMMUNITY
+              </div>
+            </div>
+          </div>
+          <div className="hero-bottom container">
+            <span>SCROLL TO EXPLORE</span>
+            <span className="scroll-line" />
+            <span>01 — 05</span>
+          </div>
+        </section>
+
+        <section className="quick-section container">
+          <div className="section-intro">
+            <div>
+              <span className="section-kicker">YOUR CENTRAL ACADEMY</span>
+              <h2>
+                Everything you need,
+                <br />
+                <em>right this way.</em>
+              </h2>
+            </div>
+            <p>
+              Whether you are a parent, a student, or a visitor, find your way
+              around Central Academy.
+            </p>
+          </div>
+          <div className="quick-grid">
+            {quickLinks.map((item) => (
+              <Link className="quick-card" href={item.href} key={item.number}>
+                <div className="quick-card-top">
+                  <span>{item.number}</span>
+                  <span className="quick-icon">{item.icon}</span>
+                </div>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+                <span className="quick-arrow">
+                  Explore <b>↗</b>
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="about-strip">
+          <div className="container about-layout">
+            <div className="about-label">
+              <span className="section-kicker">A LITTLE ABOUT US</span>
+              <span className="about-index">02 / 05</span>
+            </div>
+            <div className="about-content">
+              <h2>
+                More than a school.
+                <br />
+                <em>A place to become.</em>
+              </h2>
+              <p>
+                At Central Academy, Sarai Inayat, we believe education is about
+                nurturing knowledge, confidence, values, and the courage to
+                shape a better tomorrow.
+              </p>
+              <Link className="text-link" href="/about">
+                Get to know us <span>↗</span>
+              </Link>
+            </div>
+            <div className="about-stamp">
+              <span>CA</span>
+              <small>
+                THE LEGACY
+                <br />
+                CONTINUES
+              </small>
+            </div>
+          </div>
+        </section>
+
+        <CampusFacilities />
+
+        <StudentLife />
+
+        <LeadershipMessages />
+
+        <Announcements />
+
+        <HomeGallery />
+
+        <Admissions />
+
+        <ContactSection />
       </main>
-    </div>
+
+      <footer className="site-footer">
+        <div className="container footer-inner">
+          <Link className="footer-brand" href="/">
+            CENTRAL ACADEMY<span>SARAI INAYAT, PRAYAGRAJ</span>
+          </Link>
+          <p>Learning today. Leading tomorrow.</p>
+          <span className="footer-copy">© 2026 Central Academy</span>
+        </div>
+      </footer>
+    </>
   );
 }
